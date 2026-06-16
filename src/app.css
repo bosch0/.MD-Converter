@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    font-synthesis: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(129, 152, 201, 0.62) rgba(8, 13, 23, 0.72);
+  }
+
+  body {
+    text-rendering: optimizeLegibility;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(129, 152, 201, 0.62) rgba(8, 13, 23, 0.72);
+  }
+
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  html::-webkit-scrollbar-track,
+  body::-webkit-scrollbar-track {
+    background: rgba(8, 13, 23, 0.76);
+  }
+
+  html::-webkit-scrollbar-thumb,
+  body::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    border: 3px solid rgba(8, 13, 23, 0.76);
+    background: linear-gradient(180deg, rgba(132, 155, 204, 0.86), rgba(93, 124, 255, 0.82));
+  }
+}
+
+@layer components {
+  .has-scroll-animations .reveal-section {
+    @apply opacity-0 translate-y-[34px] scale-[0.985] blur-[6px];
+    transition:
+      opacity 680ms cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms),
+      transform 680ms cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms),
+      filter 680ms cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms);
+    will-change: opacity, transform, filter;
+  }
+
+  .has-scroll-animations .reveal-section.is-visible {
+    @apply opacity-100 translate-y-0 scale-100 blur-0;
+  }
+
+  .markdown-render {
+    @apply whitespace-normal text-left font-body break-words;
+    overflow-wrap: anywhere;
+  }
+
+  .markdown-render > * {
+    @apply max-w-full;
+  }
+
+  .markdown-render img,
+  .markdown-render video,
+  .markdown-render svg {
+    @apply max-w-full h-auto block;
+  }
+
+  .markdown-render iframe {
+    @apply w-full max-w-full aspect-video h-auto;
+  }
+
+  .markdown-render h1,
+  .markdown-render h2,
+  .markdown-render h3,
+  .markdown-render h4,
+  .markdown-render h5,
+  .markdown-render h6 {
+    @apply mt-[1.2em] mb-[0.55em] font-heading font-bold tracking-[-0.02em] text-ink-strong;
+  }
+
+  .markdown-render h1:first-child,
+  .markdown-render h2:first-child,
+  .markdown-render h3:first-child {
+    @apply mt-0;
+  }
+
+  .markdown-render p,
+  .markdown-render ul,
+  .markdown-render ol,
+  .markdown-render blockquote,
+  .markdown-render pre,
+  .markdown-render table {
+    @apply mt-0 mb-[1em];
+  }
+
+  .markdown-render ul {
+    @apply list-disc pl-[1.35em];
+  }
+
+  .markdown-render ol {
+    @apply list-decimal pl-[1.35em];
+  }
+
+  .markdown-render li + li {
+    @apply mt-[0.35em];
+  }
+
+  .markdown-render a {
+    @apply text-[#9ab1ff] underline underline-offset-[2px];
+  }
+
+  .markdown-render blockquote {
+    @apply py-[0.8em] px-[1em] border-l-[3px] border-[rgba(109,134,255,0.55)] bg-[rgba(12,17,30,0.68)] rounded-r-[12px] text-ink-muted;
+  }
+
+  .markdown-render code {
+    @apply px-[0.35em] py-[0.14em] rounded-[8px] bg-[rgba(255,255,255,0.08)] font-mono text-[0.94em];
+  }
+
+  .markdown-render pre {
+    @apply overflow-auto p-[14px] rounded-[14px] bg-[rgba(7,11,20,0.9)] border border-border;
+  }
+
+  .markdown-render pre code {
+    @apply p-0 bg-transparent;
+  }
+
+  .markdown-render table {
+    @apply w-full max-w-full block overflow-auto border-collapse rounded-[14px];
+  }
+
+  .markdown-render th,
+  .markdown-render td {
+    @apply py-[10px] px-[12px] border border-[rgba(255,255,255,0.08)] align-top;
+  }
+
+  .markdown-render th {
+    @apply bg-[rgba(255,255,255,0.06)] text-ink-strong;
+  }
+
+  .markdown-render pre {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(129, 152, 201, 0.56) rgba(10, 16, 28, 0.78);
+  }
+
+  .markdown-render pre::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .markdown-render pre::-webkit-scrollbar-track {
+    background: rgba(10, 16, 28, 0.74);
+    border-radius: 999px;
+  }
+
+  .markdown-render pre::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    border: 2px solid rgba(10, 16, 28, 0.74);
+    background: linear-gradient(180deg, rgba(123, 147, 198, 0.84), rgba(88, 113, 194, 0.78));
+  }
+}
+
+@layer utilities {
+  .focus-ring {
+    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-focus-ring focus-visible:outline-offset-2;
+  }
+
+  .focus-ring:focus-visible {
+    box-shadow: 0 0 0 3px rgba(104, 134, 255, 0.38);
+  }
+
+  .scrollbar-slim {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(129, 152, 201, 0.56) rgba(10, 16, 28, 0.78);
+  }
+
+  .scrollbar-slim::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .scrollbar-slim::-webkit-scrollbar-track {
+    background: rgba(10, 16, 28, 0.74);
+    border-radius: 999px;
+  }
+
+  .scrollbar-slim::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    border: 2px solid rgba(10, 16, 28, 0.74);
+    background: linear-gradient(180deg, rgba(123, 147, 198, 0.84), rgba(88, 113, 194, 0.78));
+  }
+}

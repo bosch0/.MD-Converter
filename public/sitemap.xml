@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- TODO(domain): replace https://mdconverter.app/ with the real production domain once it's decided. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://mdconverter.app/</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mdconverter.app/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://mdconverter.app/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mdconverter.app/" />
+  </url>
+</urlset>

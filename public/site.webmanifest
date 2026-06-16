@@ -1,0 +1,21 @@
+{
+  "name": "MD Converter | PDF y DOCX a Markdown",
+  "short_name": "MD Converter",
+  "description": "Convierte archivos PDF y DOCX a Markdown limpio, listo para reutilizar en IA.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b1020",
+  "theme_color": "#0b1020",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
